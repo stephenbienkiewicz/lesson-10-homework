@@ -985,3 +985,73 @@ Processing by RestaurantsController#index as HTML
   [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants"
   Rendered restaurants/index.html.erb within layouts/application (15.6ms)
 Completed 200 OK in 247ms (Views: 245.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-30 23:08:45 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 260ms (Views: 244.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 23:08:45 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 23:08:45 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 23:08:45 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-30 23:08:46 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 23:08:46 -0400
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-30 23:08:48 -0400
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 227ms (Views: 225.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-30 23:09:12 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wdA/vJ5zcdroR7uV7pXBzyP1U8kDe2Qfxb1KV7NqURpxWuajS8MAQeAAEAEIzZkXL9Tf4xPvkONQrec9uED+TQ==", "restaurant"=>{"name"=>"", "street"=>"me st", "city"=>"clifton", "state"=>"nj", "country"=>"usa", "postal_code"=>"00000"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered restaurants/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 292ms (Views: 277.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-30 23:09:19 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ghcwx6nHmeUMEf+G9C+vhb6UmR+FDDyeFsx28cpcp3OqnenYfHfofgRWVBISd/ddsrUVNZWYyGKD3NubwXYIJA==", "restaurant"=>{"name"=>"hey", "street"=>"me st", "city"=>"clifton", "state"=>"nj", "country"=>"usa", "postal_code"=>"00000"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "restaurants" ("name", "street", "city", "state", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "hey"], ["street", "me st"], ["city", "clifton"], ["state", "nj"], ["country", "usa"], ["postal_code", "00000"], ["created_at", "2016-05-31 03:09:19.896709"], ["updated_at", "2016-05-31 03:09:19.896709"]]
+  [1m[35m (24.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 48ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-30 23:09:19 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 220ms (Views: 220.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/restaurants/7" for ::1 at 2016-05-30 23:09:23 -0400
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ft3ziY94UIiq0NIg5bJZBBNvHSlL9JTxnbrmAodUp9jOVyqWWsghE6KXebQD6gHcH06RA1tgYA0IqktojH4Ijw==", "id"=>"7"}
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (20.0ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = ?[0m  [["id", 7]]
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 40ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-30 23:09:24 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 252ms (Views: 251.8ms | ActiveRecord: 0.0ms)

@@ -12,9 +12,15 @@ class RestaurantsController  < ApplicationController
   end
   
   def create
-    @restaurant = Restaurant.create(restaurant_params)
+    @restaurant = Restaurant.new(restaurant_params)
     
-    redirect_to restaurants_path
+    if @restaurant.save
+      flash[:notice] = 'Restaurant was saved successfully'
+       redirect_to restaurants_path
+    else
+      flash[:error] = 'There was a problem saving this Restaurant'
+      render :new
+    end
   end
   
   def edit 
